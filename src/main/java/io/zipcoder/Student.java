@@ -43,5 +43,26 @@ public class Student {
         return examScores.size();
     }
 
+    public void addExamScore(Double examScoreAdded) {
+        this.examScores.add(examScoreAdded);
+
+    }
+    public void setExamScore(int examNumber, double newScore){
+        examScores.add(examNumber,newScore);
+    }
+
+    public Double getAverageExamScore() {
+        Double addedScores= 0.0;
+        for(int i =0; i < examScores.size(); i++){
+
+            addedScores += examScores.get(i);
+        }
+        return addedScores/examScores.size();
+    }
+    public String toString() {
+
+        return "Student Name: " + firstName + lastName + "\n> Average Score: " + getAverageExamScore() +
+                getExamScores();
+    }
 
 }
