@@ -30,12 +30,18 @@ public class Student {
         this.lastName = lastName;
     }
 
-    public ArrayList<Double> getExamScores() {
-        return examScores;
+    public String getExamScores() {
+        String printedScores = "";
+        for (int i= 0; i<examScores.size(); i++ ){
+            printedScores +=  "\n\t Exam" + i + "-> " + examScores.get(i);
+        }
+
+        return "Exam Scores: \n" + printedScores;
     }
 
     public Integer getNumberOfExamsTaken(){
         return examScores.size();
     }
+
 
 }
