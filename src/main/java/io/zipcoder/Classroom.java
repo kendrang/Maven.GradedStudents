@@ -4,6 +4,7 @@ public class Classroom {
 
 
     Student[] students;
+    int maxNumberOfStudents;
 
     public Classroom (int maxNumberOfStudents){
         students = new Student[maxNumberOfStudents];
@@ -29,5 +30,16 @@ public class Classroom {
             addedScores += students[i].getAverageExamScore();
         }
         return addedScores / students.length;
+    }
+
+    public void addStudent(Student newStudent){
+        for (int i =0 ; i < this.students.length ; i++){
+            if (this.students[i] == null){
+                this.students[i] = newStudent;
+                break;
+            }
+
+        }
+
     }
 }
