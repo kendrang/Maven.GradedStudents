@@ -42,4 +42,23 @@ public class Classroom {
         }
 
     }
+    public void removeStudent (String firstName, String lastName){
+        int counter =0;
+        Student[] removedStudentArr = new Student[students.length- counter];
+        for (int i=0 ; i <students.length ; i++){
+            if (students[i].firstName + students[i].lastName != firstName + lastName){
+                counter +=1;
+            }
+        }
+        for (int j=0 ; j < removedStudentArr.length ; j++){
+            if (students[j].firstName + students[j].lastName != firstName + lastName)
+            removedStudentArr[j] = students[j];
+        }
+
+    }
+
+    public void getStudentByScore (){
+
+
+    }
 }

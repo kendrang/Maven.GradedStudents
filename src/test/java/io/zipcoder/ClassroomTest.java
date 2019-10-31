@@ -52,4 +52,34 @@ public class ClassroomTest {
         System.out.println(postEnrollmentAsString);
     }
 
+    @Test
+    public void removeStudentTest() {
+
+        // : Given
+        int maxNumberOfStudents = 2;
+        Classroom classroom = new Classroom(maxNumberOfStudents);
+        ArrayList<Double> examScoresList = new ArrayList<>(Arrays.asList(100.0, 150.0, 250.0, 0.0 ));
+        Student s1 = new Student("Leon", "Hunter", examScoresList);
+        ArrayList<Double> examScoresList2 = new ArrayList<>(Arrays.asList(50.0, 100.0, 75.0, 45.0 ));
+        Student s2 = new Student("Danny", "Devito", examScoresList2);
+
+        // When
+        classroom.addStudent(s1);
+        classroom.addStudent(s2);
+        Student[] preEnrollment = classroom.getStudents();
+        classroom.removeStudent("Danny", "Devito");
+        Student[] postEnrollment = classroom.getStudents();
+
+        // Then
+        String preEnrollmentAsString = Arrays.toString(preEnrollment);
+        String postEnrollmentAsString = Arrays.toString(postEnrollment);
+
+        System.out.println("===========================");
+        System.out.println(preEnrollmentAsString);
+        System.out.println("===========================");
+        System.out.println(postEnrollmentAsString);
+
+
+    }
+
 }
