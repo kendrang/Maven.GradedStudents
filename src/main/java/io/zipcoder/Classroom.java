@@ -94,19 +94,26 @@ public class Classroom {
                 gradeBook.get("A").add(students[i]);
 
             }
-            if(students[i].getAverageExamScore() >= 80.0) {
+            else if(students[i].getAverageExamScore() >= 80.0) {
                 gradeBook.get("B").add(students[i]);
             }
-            if(students[i].getAverageExamScore() >= 70.0) {
+            else if(students[i].getAverageExamScore() >= 70.0) {
                 gradeBook.get("C").add(students[i]);
             }
-            if(students[i].getAverageExamScore() >= 60.0) {
+            else if(students[i].getAverageExamScore() >= 60.0) {
                 gradeBook.get("D").add(students[i]);
             }
-            if(students[i].getAverageExamScore() < 60.0) {
+            else{
                 gradeBook.get("F").add(students[i]);
             }
+
         }
+
+        for (Map.Entry gradeEntry : gradeBook.entrySet() ){
+            System.out.println(gradeEntry.toString());
+
+        }
+
 
     }
 }
