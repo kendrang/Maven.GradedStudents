@@ -1,9 +1,7 @@
 package io.zipcoder;
 
 import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Map;
+import java.util.*;
 
 public class Classroom {
 
@@ -82,12 +80,33 @@ public class Classroom {
 
     }
     public void getGradeBook() {
+        Map<String, ArrayList<Student>> gradeBook= new TreeMap<>();
+
+        gradeBook.put("A", new ArrayList<Student>());
+        gradeBook.put("B", new ArrayList<Student>());
+        gradeBook.put("C", new ArrayList<Student>());
+        gradeBook.put("D", new ArrayList<Student>());
+        gradeBook.put("F", new ArrayList<Student>());
+
         for (int i=0 ; i <students.length; i++){
-            Map<String, Array>
 
+            if(students[i].getAverageExamScore() >= 90.0){
+                gradeBook.get("A").add(students[i]);
+
+            }
+            if(students[i].getAverageExamScore() >= 80.0) {
+                gradeBook.get("B").add(students[i]);
+            }
+            if(students[i].getAverageExamScore() >= 70.0) {
+                gradeBook.get("C").add(students[i]);
+            }
+            if(students[i].getAverageExamScore() >= 60.0) {
+                gradeBook.get("D").add(students[i]);
+            }
+            if(students[i].getAverageExamScore() < 60.0) {
+                gradeBook.get("F").add(students[i]);
+            }
         }
-
-
 
     }
 }
