@@ -83,7 +83,7 @@ public class ClassroomTest {
     }
 
     @Test
-    public void getStudentByScore (){
+    public void getStudentsByScore (){
 
         // : Given
         int maxNumberOfStudents = 3;
@@ -101,7 +101,7 @@ public class ClassroomTest {
         classroom.addStudent(s3);
         Student[] preEnrollment = classroom.getStudents();
         String preEnrollmentAsString = Arrays.toString(preEnrollment);
-        classroom.getStudentByScore();
+        classroom.getStudentsByScore();
         Student[] postEnrollment = classroom.getStudents();
 
         // Then

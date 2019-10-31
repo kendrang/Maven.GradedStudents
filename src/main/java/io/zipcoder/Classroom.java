@@ -1,7 +1,9 @@
 package io.zipcoder;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Map;
 
 public class Classroom {
 
@@ -60,7 +62,7 @@ public class Classroom {
 
     }
 
-    public void getStudentByScore (){
+    public void getStudentsByScore (){
         Student[] scoresArr = new Student[students.length];
         for (int i=0 ; i <students.length-1; i ++){
             for (int j=i+1; j <students.length ; j++){
@@ -79,6 +81,14 @@ public class Classroom {
 
 
     }
+    public void getGradeBook() {
+        for (int i=0 ; i <students.length; i++){
+            Map<String, Array>
 
+        }
+
+
+
+    }
 }
 
