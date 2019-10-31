@@ -82,4 +82,37 @@ public class ClassroomTest {
 
     }
 
+    @Test
+    public void getStudentByScore (){
+
+        // : Given
+        int maxNumberOfStudents = 3;
+        Classroom classroom = new Classroom(maxNumberOfStudents);
+        ArrayList<Double> examScoresList = new ArrayList<>(Arrays.asList(50.0 ));
+        Student s1 = new Student("Beeg", "Chungus", examScoresList);
+        ArrayList<Double> examScoresList2 = new ArrayList<>(Arrays.asList(100.0 ));
+        Student s2 = new Student("Leon", "Hunter", examScoresList2);
+        ArrayList<Double> examScoresList3 = new ArrayList<>(Arrays.asList(20.0 ));
+        Student s3 = new Student("Danny", "Devito", examScoresList3);
+
+        // When
+        classroom.addStudent(s1);
+        classroom.addStudent(s2);
+        classroom.addStudent(s3);
+        Student[] preEnrollment = classroom.getStudents();
+        String preEnrollmentAsString = Arrays.toString(preEnrollment);
+        classroom.getStudentByScore();
+        Student[] postEnrollment = classroom.getStudents();
+
+        // Then
+
+        String postEnrollmentAsString = Arrays.toString(postEnrollment);
+
+        System.out.println("===========================");
+        System.out.println(preEnrollmentAsString);
+        System.out.println("===========================");
+        System.out.println(postEnrollmentAsString);
+
+
+    }
 }

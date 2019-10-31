@@ -1,5 +1,8 @@
 package io.zipcoder;
 
+import java.util.Arrays;
+import java.util.Collections;
+
 public class Classroom {
 
 
@@ -58,7 +61,24 @@ public class Classroom {
     }
 
     public void getStudentByScore (){
+        Student[] scoresArr = new Student[students.length];
+        for (int i=0 ; i <students.length-1; i ++){
+            for (int j=i+1; j <students.length ; j++){
+                if (students[i].getAverageExamScore().compareTo(students[j].getAverageExamScore())<0){
+                    Student temp = students[i];
+                    students[i] = students[j];
+                    students[j] = temp;
+
+
+                }
+
+            }
+
+
+        }
 
 
     }
+
 }
+
